@@ -6,6 +6,7 @@ Last updated: 2026-10-19
 
 ## Sources scanned
 
+- .agents\skills
 - C:\Users\Administrator\.config\opencode\skills
 - C:\Users\Administrator\.gemini\skills
 - C:\Users\Administrator\.gemini\antigravity\skills
@@ -29,6 +30,9 @@ Last updated: 2026-10-19
 | `go-testing` | Trigger: Go tests, go test coverage, Bubbletea teatest, golden files. Apply focused Go testing patterns. | user | `C:\Users\Administrator\.config\opencode\skills\go-testing\SKILL.md` |
 | `issue-creation` | Create Gentle AI issues with issue-first checks. Trigger: creating GitHub issues, bug reports, or feature requests. | user | `C:\Users\Administrator\.config\opencode\skills\issue-creation\SKILL.md` |
 | `judgment-day` | Trigger: judgment day, dual review, adversarial review, juzgar. Run explicit blind dual review with at most two scoped fix/re-judgment rounds. | user | `C:\Users\Administrator\.config\opencode\skills\judgment-day\SKILL.md` |
+| `nextjs-middleware` | Complete Next.js Middleware system (Next.js 15.5/16). PROACTIVELY activate for: (1) Creating middleware.ts (Edge) or proxy.ts (Node.js), (2) Matcher configuration, (3) Authentication protection, (4) Role-based access control, (5) Redirects and rewrites, (6) Internationalization (i18n), (7) Security headers (CSP, CORS), (8) Geolocation routing, (9) Bot detection, (10) Rate limiting patterns, (11) Node.js Middleware with proxy.ts (Next.js 16). Provides: Edge middleware patterns, Node.js proxy patterns, matcher syntax, auth guards, header manipulation, cookie handling, database access in proxy.ts. Ensures optimized request handling with proper security. | project | `E:\web_projects\dabaw_estate\.agents\skills\nextjs-middleware\SKILL.md` |
+| `nextjs-stack` | Use as the master reference for a full Next.js 16+ stack — Prisma 7, Better Auth, shadcn/ui, TanStack Form, Zustand. Not for core framework API details (use nextjs-16). | project | `E:\web_projects\dabaw_estate\.agents\skills\nextjs-stack\SKILL.md` |
+| `shadcn-vue` | shadcn-vue for Vue/Nuxt with Reka UI components and Tailwind. Use for accessible UI, Auto Form, data tables, charts, dark mode, or encountering component imports, Reka UI errors. | project | `E:\web_projects\dabaw_estate\.agents\skills\shadcn-vue\SKILL.md` |
 | `skill-creator` | Trigger: new skills, agent instructions, documenting AI usage patterns. Create LLM-first skills with valid frontmatter. | user | `C:\Users\Administrator\.config\opencode\skills\skill-creator\SKILL.md` |
 | `skill-improver` | Trigger: improve skills, audit skills, refactor skills, skill quality. Audit and upgrade existing LLM-first skills. | user | `C:\Users\Administrator\.config\opencode\skills\skill-improver\SKILL.md` |
 | `tensorflow-neural-networks` | Build and train neural networks with TensorFlow | user | `C:\Users\Administrator\.gemini\skills\tensorflow-neural-networks\SKILL.md` |
