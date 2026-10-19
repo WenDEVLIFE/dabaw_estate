@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Bath, BedDouble, Car, MapPin, Maximize } from "lucide-react";
+import { BathIcon, BedIcon, CarIcon, MapPointIcon, MaximizeIcon } from "@solar-icons/react/linear";
 import { Badge } from "@/components/ui/badge";
 import { SafeImage } from "@/components/ui/safe-image";
 import { buttonClasses } from "@/components/ui/button";
@@ -27,33 +27,33 @@ export function PropertyCard({
 }) {
   const image = property.images[0];
 
-  const facts: Array<{ key: string; label: string; Icon: typeof BedDouble }> = [];
+  const facts: Array<{ key: string; label: string; Icon: typeof BedIcon }> = [];
   if (property.bedrooms !== undefined) {
     facts.push({
       key: "beds",
       label: `${property.bedrooms} bd`,
-      Icon: BedDouble,
+      Icon: BedIcon,
     });
   }
   if (property.bathrooms !== undefined) {
     facts.push({
       key: "baths",
       label: `${property.bathrooms} ba`,
-      Icon: Bath,
+      Icon: BathIcon,
     });
   }
   if (property.floorArea !== undefined) {
     facts.push({
       key: "floor",
       label: formatArea(property.floorArea),
-      Icon: Maximize,
+      Icon: MaximizeIcon,
     });
   }
   if (property.parking !== undefined) {
     facts.push({
       key: "parking",
       label: `${property.parking} parking`,
-      Icon: Car,
+      Icon: CarIcon,
     });
   }
 
@@ -96,7 +96,7 @@ export function PropertyCard({
         </h3>
 
         <p className="flex items-center gap-1.5 text-sm text-muted">
-          <MapPin aria-hidden="true" className="h-4 w-4 shrink-0" />
+          <MapPointIcon aria-hidden="true" className="h-4 w-4 shrink-0" />
           {property.location}, Davao City
         </p>
 

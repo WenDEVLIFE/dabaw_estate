@@ -1,7 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { FOOTER_NAV } from "@/lib/navigation";
-import { DEMO_DISCLOSURE, SITE_LOCATION_LABEL, SITE_NAME, SITE_TAGLINE, COPYRIGHT_YEAR } from "@/lib/constants";
+import { DEMO_DISCLOSURE, SITE_NAME, SITE_TAGLINE, COPYRIGHT_YEAR } from "@/lib/constants";
 
 /** Server-rendered site footer: brand line, navigation, and demo disclosure. */
 export function SiteFooter() {
@@ -9,12 +10,15 @@ export function SiteFooter() {
     <footer className="border-t border-white/10 bg-forest-deep text-ivory">
       <Container className="flex flex-col gap-10 py-12">
         <div className="grid gap-10 md:grid-cols-[1.5fr_1fr]">
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-4">
             <div>
-              <p className="font-display text-xl tracking-tight">{SITE_NAME}</p>
-              <p className="type-eyebrow mt-1 text-gold-soft">
-                {SITE_LOCATION_LABEL}
-              </p>
+              <Image
+                src="/dabaw_estate.png"
+                alt="DABAW ESTATE — Find your place in Davao."
+                width={500}
+                height={500}
+                className="h-44 w-auto sm:h-52"
+              />
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-ivory/80">
               {SITE_TAGLINE} A frontend-only demo prototype for browsing sample
@@ -29,7 +33,7 @@ export function SiteFooter() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-ivory/90 underline-offset-4 hover:text-white hover:underline"
+                    className="inline-flex min-h-11 items-center text-sm text-ivory/90 underline-offset-4 hover:text-white hover:underline"
                   >
                     {item.label}
                   </Link>

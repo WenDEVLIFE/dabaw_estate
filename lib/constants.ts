@@ -18,6 +18,9 @@ export const ADMIN_BANNER =
 export const INQUIRY_SUCCESS_MESSAGE =
   "Demo submission complete. No message was sent.";
 
+export const INQUIRY_DISCLOSURE =
+  "Demo form: submission is simulated locally. No message is sent and no one is contacted.";
+
 export const FAVORITES_STORAGE_KEY = "dabaw-estate:favorites";
 
 export const SAMPLE_LISTING_LABEL = "Sample Listing";

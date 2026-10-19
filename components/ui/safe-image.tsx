@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ImageOff } from "lucide-react";
+import { GalleryIcon } from "@solar-icons/react/linear";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -50,7 +50,7 @@ export function SafeImage({
     >
       {failed ? (
         <span className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-4 text-center text-muted">
-          <ImageOff aria-hidden="true" className="h-6 w-6" />
+          <GalleryIcon aria-hidden="true" className="h-6 w-6" />
           <span className="text-xs font-medium">Image unavailable</span>
         </span>
       ) : (

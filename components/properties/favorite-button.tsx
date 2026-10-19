@@ -1,6 +1,6 @@
 "use client";
 
-import { Heart } from "lucide-react";
+import { HeartIcon } from "@solar-icons/react/linear";
 import { useSyncExternalStore } from "react";
 import {
   getServerSnapshot,
@@ -53,7 +53,7 @@ export function FavoriteButton({
         className,
       )}
     >
-      <Heart
+      <HeartIcon
         aria-hidden="true"
         className={cn("h-5 w-5", isFavorite && "fill-gold text-forest")}
       />

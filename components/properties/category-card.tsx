@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRightIcon } from "@solar-icons/react/linear";
 import { SafeImage } from "@/components/ui/safe-image";
 import type { CategoryCardData } from "@/data/categories";
 import { cn } from "@/lib/utils";
@@ -36,7 +36,7 @@ export function CategoryCard({
         <p className="text-sm leading-relaxed text-muted">{category.blurb}</p>
         <span className="mt-auto inline-flex items-center gap-1.5 pt-2 text-sm font-medium text-forest">
           Explore
-          <ArrowRight
+          <ArrowRightIcon
             aria-hidden="true"
             className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
           />

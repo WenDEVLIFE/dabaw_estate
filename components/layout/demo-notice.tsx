@@ -1,4 +1,4 @@
-import { Info } from "lucide-react";
+import { InfoCircleIcon } from "@solar-icons/react/linear";
 import { DEMO_DISCLOSURE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -22,7 +22,7 @@ export function DemoNotice({
         className,
       )}
     >
-      <Info aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0" />
+      <InfoCircleIcon aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0" />
       <span className="leading-relaxed">{DEMO_DISCLOSURE}</span>
     </p>
   );

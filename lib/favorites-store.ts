@@ -59,12 +59,28 @@ function persist(next: Set<string>): void {
   }
 }
 
+/**
+ * Read and validate the stored ids. Accessing `window.localStorage` can throw
+ * when storage is blocked (privacy mode, policy, sandbox), so the read is
+ * guarded and falls back to an empty in-memory set.
+ */
+function readStored(): Set<string> {
+  if (!hasWindow()) {
+    return new Set();
+  }
+  try {
+    return safeParse(window.localStorage.getItem(FAVORITES_STORAGE_KEY));
+  } catch {
+    return new Set();
+  }
+}
+
 function ensureHydrated(): void {
   if (hydrated || !hasWindow()) {
     return;
   }
   hydrated = true;
-  favorites = safeParse(window.localStorage.getItem(FAVORITES_STORAGE_KEY));
+  favorites = readStored();
   cachedSnapshot = new Set(favorites);
 }
 
@@ -79,10 +95,7 @@ function handleStorage(event: StorageEvent): void {
   if (event.key !== null && event.key !== FAVORITES_STORAGE_KEY) {
     return;
   }
-  if (!hasWindow()) {
-    return;
-  }
-  favorites = safeParse(window.localStorage.getItem(FAVORITES_STORAGE_KEY));
+  favorites = readStored();
   notify();
 }
 

@@ -1,8 +1,8 @@
 import type { PriceLabel } from "@/types/property";
 
 /**
- * Join conditional class names. Intentionally dependency-free: only `lucide-react`
- * may be added to this project, so this is a small local helper rather than clsx.
+ * Join conditional class names. Intentionally dependency-free: no runtime
+ * dependency is needed here, so this is a small local helper rather than clsx.
  */
 export function cn(
   ...inputs: Array<string | false | null | undefined>

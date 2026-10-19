@@ -92,54 +92,54 @@ Slice order is dependency-ordered. Slices 2–4 are intentionally runtime-free (
 
 ## Phase 7: Homepage
 
-- [ ] 7.1 [NEW] `components/properties/hero-search.tsx` (client: labeled area/category/transaction, pushes validated criteria to `/properties`).
-- [ ] 7.2 [MOD] `app/page.tsx`: replace starter with hero (single H1 “Find your place in Davao.”), `HeroSearch`, featured grid, category grid, area highlights, why section, CTA, in-content demo notice.
-- [ ] 7.3 Verify homepage scenarios: exactly one H1, featured-only cards, category links route correctly, disclosure visible outside footer.
+- [x] 7.1 [NEW] `components/properties/hero-search.tsx` (client: labeled area/category/transaction, pushes validated criteria to `/properties`).
+- [x] 7.2 [MOD] `app/page.tsx`: replace starter with hero (single H1 “Find your place in Davao.”), `HeroSearch`, featured grid, category grid, area highlights, why section, CTA, in-content demo notice.
+- [x] 7.3 Verify homepage scenarios: exactly one H1, featured-only cards, category links route correctly, disclosure visible outside footer.
 
 ## Phase 8: Listings & Category Pages
 
-- [ ] 8.1 [NEW] `components/properties/property-search.tsx` (labeled text search).
-- [ ] 8.2 [NEW] `components/properties/property-filters.tsx` (category, transaction, area, price min/max, beds, baths; mobile disclosure).
-- [ ] 8.3 [NEW] `components/properties/listing-explorer.tsx` (client: local state, `replaceState` URL sync from `useSearchParams`, sort, active filters, clear, `role="status"` count, empty state).
-- [ ] 8.4 [NEW] `app/properties/page.tsx` (static shell + `<Suspense>` around `ListingExplorer`).
-- [ ] 8.5 [NEW] `app/buy/page.tsx`, `app/rent/page.tsx`, `app/commercial/page.tsx`, `app/short-stays/page.tsx` (each passes `lockedCategory`, unique H1, count + empty state).
-- [ ] 8.6 Verify listing scenarios: `q=Lanang` matches area/description, AND-combined filters, reload persistence, price sort, count/empty/clear, category counts (3/4/2/3).
+- [x] 8.1 [NEW] `components/properties/property-search.tsx` (labeled text search).
+- [x] 8.2 [NEW] `components/properties/property-filters.tsx` (category, transaction, area, price min/max, beds, baths; mobile disclosure).
+- [x] 8.3 [NEW] `components/properties/listing-explorer.tsx` (client: local state, `replaceState` URL sync from `useSearchParams`, sort, active filters, clear, `role="status"` count, empty state).
+- [x] 8.4 [NEW] `app/properties/page.tsx` (static shell + `<Suspense>` around `ListingExplorer`).
+- [x] 8.5 [NEW] `app/buy/page.tsx`, `app/rent/page.tsx`, `app/commercial/page.tsx`, `app/short-stays/page.tsx` (each passes `lockedCategory`, unique H1, count + empty state).
+- [x] 8.6 Verify listing scenarios: `q=Lanang` matches area/description, AND-combined filters, reload persistence, price sort, count/empty/clear, category counts (3/4/2/3).
 
 ## Phase 9: Property Detail Page
 
-- [ ] 9.1 [NEW] `components/properties/property-gallery.tsx` (client: prev/next keyboard, “Image N of M” live region, `SafeImage` fallback).
-- [ ] 9.2 [NEW] `components/properties/related-properties.tsx` (up to 3, excludes current slug).
-- [ ] 9.3 [NEW] `app/properties/[slug]/page.tsx`: `generateStaticParams`, `generateMetadata`, `<Suspense>` child awaiting `params`, `notFound()` on unknown slug.
-- [ ] 9.4 [NEW] `app/properties/[slug]/not-found.tsx` (property 404 + back link).
-- [ ] 9.5 Verify detail scenarios: valid slug H1, unknown slug 404, rental period shown, commercial omits bedrooms, gallery keyboard/failure, related excludes current, single H1.
+- [x] 9.1 [NEW] `components/properties/property-gallery.tsx` (client: prev/next keyboard, “Image N of M” live region, `SafeImage` fallback).
+- [x] 9.2 [NEW] `components/properties/related-properties.tsx` (up to 3, excludes current slug).
+- [x] 9.3 [NEW] `app/properties/[slug]/page.tsx`: `generateStaticParams`, `generateMetadata`, `<Suspense>` child awaiting `params`, `notFound()` on unknown slug.
+- [x] 9.4 [NEW] `app/properties/[slug]/not-found.tsx` (property 404 + back link).
+- [x] 9.5 Verify detail scenarios: valid slug H1, unknown slug 404, rental period shown, commercial omits bedrooms, gallery keyboard/failure, related excludes current, single H1.
 
 ## Phase 10: Inquiry Forms
 
-- [ ] 10.1 [NEW] `components/ui/inquiry-form.tsx` (client: `validateInquiry`, inline `aria-invalid`/`aria-describedby`, focus first invalid field, disabled pending, exact success string, no transmission).
-- [ ] 10.2 [NEW] `components/properties/property-inquiry-form.tsx` (preselected property, identified by title).
-- [ ] 10.3 [NEW] `app/contact/page.tsx` (static copy + shared `InquiryForm`, optional property select).
-- [ ] 10.4 Verify inquiry scenarios: empty submit blocked + focus moves, invalid email rejected, success text exact, no request carries data, disclosure visible, mobile 320 px fit.
+- [x] 10.1 [NEW] `components/ui/inquiry-form.tsx` (client: `validateInquiry`, inline `aria-invalid`/`aria-describedby`, focus first invalid field, disabled pending, exact success string, no transmission).
+- [x] 10.2 [NEW] `components/properties/property-inquiry-form.tsx` (preselected property, identified by title).
+- [x] 10.3 [NEW] `app/contact/page.tsx` (static copy + shared `InquiryForm`, optional property select).
+- [x] 10.4 Verify inquiry scenarios: empty submit blocked + focus moves, invalid email rejected, success text exact, no request carries data, disclosure visible, mobile 320 px fit.
 
 ## Phase 11: Favorites (Integration Verification)
 
-- [ ] 11.1 Verify favorites across `/`, `/properties`, four category routes, and `/properties/[slug]`: `aria-pressed` + title-bearing label, card↔detail sync, reload persistence, corrupt JSON ignored, blocked storage session-only, keyboard toggle, reduced motion.
+- [x] 11.1 Verify favorites across `/`, `/properties`, four category routes, and `/properties/[slug]`: `aria-pressed` + title-bearing label, card↔detail sync, reload persistence, corrupt JSON ignored, blocked storage session-only, keyboard toggle, reduced motion.
 
 ## Phase 12: Demo Admin
 
-- [ ] 12.1 [NEW] `components/admin/admin-property-form.tsx` (add/edit dialog, `validatePropertyDraft`, generated id/slug, visible labels/errors).
-- [ ] 12.2 [NEW] `components/admin/admin-delete-dialog.tsx` (native `<dialog>`, `showModal`, focus in/return).
-- [ ] 12.3 [NEW] `components/admin/admin-inquiry-preview.tsx` (sample-labeled inquiries).
-- [ ] 12.4 [NEW] `components/admin/admin-dashboard.tsx` (in-memory copy, search list, overview counts, dialog wiring, polite status).
-- [ ] 12.5 [NEW] `app/admin/page.tsx` (metadata shell + `AdminDashboard`).
-- [ ] 12.6 Verify admin scenarios: exact banner, count 12 + updates on add/delete, add/edit/delete-with-confirmation, reload resets, sample inquiry labels, dialog Escape/focus return, 320 px no overflow.
+- [x] 12.1 [NEW] `components/admin/admin-property-form.tsx` (add/edit dialog, `validatePropertyDraft`, generated id/slug, visible labels/errors).
+- [x] 12.2 [NEW] `components/admin/admin-delete-dialog.tsx` (native `<dialog>`, `showModal`, focus in/return).
+- [x] 12.3 [NEW] `components/admin/admin-inquiry-preview.tsx` (sample-labeled inquiries).
+- [x] 12.4 [NEW] `components/admin/admin-dashboard.tsx` (in-memory copy, search list, overview counts, dialog wiring, polite status).
+- [x] 12.5 [NEW] `app/admin/page.tsx` (metadata shell + `AdminDashboard`).
+- [x] 12.6 Verify admin scenarios: exact banner, count 12 + updates on add/delete, add/edit/delete-with-confirmation, reload resets, sample inquiry labels, dialog Escape/focus return, 320 px no overflow.
 
 ## Phase 13: Accessibility & Responsive Polish
 
-- [ ] 13.1 Audit keyboard order, focus visibility/return, labels, live regions, `aria-current`, and 44 px targets across shell, cards, filters, forms, and admin.
-- [ ] 13.2 Responsive pass at 320/360/375/768/1280 px; confirm no horizontal overflow and honor `prefers-reduced-motion`.
+- [x] 13.1 Audit keyboard order, focus visibility/return, labels, live regions, `aria-current`, and 44 px targets across shell, cards, filters, forms, and admin.
+- [x] 13.2 Responsive pass at 320/360/375/768/1280 px; confirm no horizontal overflow and honor `prefers-reduced-motion`.
 
 ## Phase 14: Verification
 
-- [ ] 14.1 Run `npm run lint && npx tsc --noEmit && npm run build`; confirm all nine routes prerender and no Suspense/`useSearchParams` build errors.
-- [ ] 14.2 Execute the manual spec-scenario matrix for all nine specs (mock-property-data → demo-admin) per design §Testing.
-- [ ] 14.3 Confirm no backend/API/auth/keys and no dependencies beyond `lucide-react`; close out the change.
+- [x] 14.1 Run `npm run lint && npx tsc --noEmit && npm run build`; confirm all nine routes prerender and no Suspense/`useSearchParams` build errors.
+- [x] 14.2 Execute the manual spec-scenario matrix for all nine specs (mock-property-data → demo-admin) per design §Testing.
+- [x] 14.3 Confirm no backend/API/auth/keys and no dependencies beyond `lucide-react`; close out the change.

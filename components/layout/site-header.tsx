@@ -1,9 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { HamburgerMenuIcon, CloseIcon } from "@solar-icons/react/linear";
 import { Container } from "@/components/ui/container";
 import { buttonClasses } from "@/components/ui/button";
 import { PRIMARY_NAV } from "@/lib/navigation";
@@ -51,14 +52,24 @@ export function SiteHeader() {
       <Container className="flex h-16 items-center justify-between gap-4">
         <Link
           href="/"
-          className="flex flex-col rounded-control leading-none"
+          className="flex items-center gap-2.5 rounded-control leading-none"
           aria-label={`${SITE_NAME} home`}
         >
-          <span className="font-display text-lg tracking-tight text-forest">
-            {SITE_NAME}
-          </span>
-          <span className="type-eyebrow mt-0.5 text-muted">
-            {SITE_LOCATION_LABEL}
+          <Image
+            src="/dabaw-estate-mark.png"
+            alt=""
+            width={255}
+            height={163}
+            priority
+            className="h-9 w-auto shrink-0"
+          />
+          <span className="flex flex-col">
+            <span className="font-display text-lg tracking-tight text-forest">
+              {SITE_NAME}
+            </span>
+            <span className="type-eyebrow mt-0.5 hidden text-muted sm:block">
+              {SITE_LOCATION_LABEL}
+            </span>
           </span>
         </Link>
 
@@ -71,7 +82,7 @@ export function SiteHeader() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "rounded-control px-3 py-2 text-sm font-medium transition-colors",
+                  "inline-flex min-h-11 items-center rounded-control px-3 text-sm font-medium transition-colors",
                   active
                     ? "text-forest"
                     : "text-charcoal hover:text-forest",
@@ -102,9 +113,9 @@ export function SiteHeader() {
           onClick={() => setOpen((previous) => !previous)}
         >
           {open ? (
-            <X aria-hidden="true" className="h-5 w-5" />
+            <CloseIcon aria-hidden="true" className="h-5 w-5" />
           ) : (
-            <Menu aria-hidden="true" className="h-5 w-5" />
+            <HamburgerMenuIcon aria-hidden="true" className="h-5 w-5" />
           )}
         </button>
       </Container>

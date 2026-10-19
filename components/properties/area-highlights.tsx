@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin } from "lucide-react";
+import { MapPointIcon } from "@solar-icons/react/linear";
 import { areas } from "@/data/areas";
 
 /**
@@ -16,7 +16,7 @@ export function AreaHighlights() {
             className="flex h-full flex-col gap-2 rounded-card border border-border bg-white p-5 transition-colors hover:border-forest"
           >
             <span className="flex items-center gap-1.5 text-base font-semibold text-charcoal">
-              <MapPin aria-hidden="true" className="h-4 w-4 text-gold" />
+              <MapPointIcon aria-hidden="true" className="h-4 w-4 text-gold" />
               {area}
             </span>
             <span className="text-sm leading-relaxed text-muted">{blurb}</span>
