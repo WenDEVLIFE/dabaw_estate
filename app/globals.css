@@ -1,26 +1,109 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * DABAW ESTATE design tokens.
+ * Values come from docs/theme.md §3 and §17. Components consume these tokens
+ * through generated utilities (bg-forest, text-charcoal, rounded-card, ...).
+ */
+@theme {
+  --color-forest: #183d32;
+  --color-forest-hover: #245344;
+  --color-forest-deep: #102b23;
+  --color-gold: #d8b77a;
+  --color-gold-soft: #e9d9b6;
+  --color-ivory: #f7f5ef;
+  --color-white: #ffffff;
+  --color-charcoal: #242824;
+  --color-muted: #6c726d;
+  --color-border: #e4e3dc;
+  --color-surface-muted: #efeee8;
+  --color-success: #2f6b4f;
+  --color-error: #b54747;
+  --color-warning: #8a641d;
+
+  --radius-card: 16px;
+  --radius-control: 10px;
+
+  --container-page: 1280px;
 }
 
+/*
+ * Runtime font variables supplied by next/font on <html>.
+ * `inline` keeps the mapping to the injected variables instead of duplicating them.
+ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-dm-serif);
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans, "Inter", system-ui, -apple-system, "Segoe UI", sans-serif);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-forest);
+    outline-offset: 2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/*
+ * Typography roles from docs/TYPOGRAPHY.MD §5, §8, §12 and §14.
+ * Display headings use the serif face; interface text and prices use Inter.
+ */
+.type-hero {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  line-height: 1.08;
+  font-weight: 400;
+}
+
+.type-page-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.875rem, 3.5vw, 3rem);
+  line-height: 1.12;
+  font-weight: 400;
+}
+
+.type-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.type-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.price {
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
